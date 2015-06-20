@@ -110,6 +110,8 @@ def listdir_recursive_nohidden(path, archive):  # {{{1
             if archive != "!":
                 if dirname == "archive":
                     dirnames.remove(dirname)
+            if dirname == "img" or dirname == "assets":
+                dirnames.remove(dirname)
         matches += [join(root, f) for f in filenames if not f.startswith('.')]
     return matches
 
